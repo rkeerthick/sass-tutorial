@@ -1,11 +1,24 @@
+@use '../util' as *;
+
 .grid {
 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     gap: 40px;
+    // max-width: 1000px;
 
-    @media screen and (min-width: 900px) {
+    // Applying max-width for desktop and width 100% for mobile using min property 
+    // width: min(100%, 1000px);
+
+    // Adding margin 20px to left and right of the mobile screen
+    width: min(100% - 20px, 1000px);
+
+
+    margin-inline: auto;
+
+    // @media screen and (min-width: 900px)
+    @include breakpoints-up(large) {
         grid-template-columns: 2fr 1fr;
     }
 
@@ -15,9 +28,21 @@
 
     &__main {
         background-color: hsl(16, 60%, 37%);
+
+        @include breakpoints-up(large) {
+            background-color: hsl(350, 63%, 44%);
+        }
+
+        @include breakpoints-up(xlarge) {
+            background-color: hsl(0, 59%, 41%);
+        }
     }
 
     &__sidebar {
         background-color: hsl(60, 8%, 20%);
+
+        @include breakpoints-down(large) {
+            text-align: center;
+        }
     }
 }
