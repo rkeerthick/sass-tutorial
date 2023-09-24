@@ -1,15 +1,17 @@
+@use 'functions' as *;
+
 // sass map
 
 $breakpoints-up: (
-    'medium': 43.75rem, // 700px
-    'large': 56.25rem, // 900px
-    'xlarge': 90rem // 1440px
+    'medium': em(700), // 700px
+    'large': em(900), // 900px
+    'xlarge': em(1440) // 1440px
 );
 
 $breakpoints-down: (
-    'medium': 43.6875rem, // 699px
-    'large': 56.1875rem, // 899px
-    'xlarge': 89.9375rem // 1439px
+    'medium': em(699), // 699px
+    'large': em(899), // 899px
+    'xlarge': em(1439) // 1439px
 );
 
 
