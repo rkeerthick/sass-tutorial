@@ -5,16 +5,14 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    gap: 40px;
+    gap: rem(40);
     // max-width: 1000px;
 
     // Applying max-width for desktop and width 100% for mobile using min property 
     // width: min(100%, 1000px);
 
     // Adding margin 20px to left and right of the mobile screen
-    width: min(100% - 20px, 1000px);
-
-
+    width: min(100% - rem(20), rem(1000));
     margin-inline: auto;
 
     // @media screen and (min-width: 900px)
@@ -23,7 +21,7 @@
     }
 
     &__main, &__sidebar {
-        padding: 40px;
+        padding: rem(40);
     }
 
     &__main {

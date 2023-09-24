@@ -1,0 +1,13 @@
+@use 'sass:math';
+
+@function rem($pixels) {
+    // if $pixels has a unit, then throw an error
+    @if(math.is-unitless($pixels) != true){
+        @error "pixel is with the unit";
+    }
+
+    // else return the rem value
+    @else{
+        @return math.div($pixels, 16) + rem;
+    }
+}

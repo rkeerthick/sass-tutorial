@@ -1,3 +1,5 @@
+@use '../util/' as *;
+
 h1,
 h2,
 h3 {
@@ -6,8 +8,38 @@ h3 {
   margin-top: 0px;
 }
 
+// h1 {
+//   font-size: 28px;
+
+//   @include breakpoints-up(large) {
+//     font-size: 36px;
+//   }
+
+//   @include breakpoints-up(xlarge) {
+//     font-size: 42px;
+//   }
+// }
+
+h1 {
+  // using calc to perform better typography
+  // font-size: calc(16px + 2vw);
+
+  // clamp is used to set (min, desirable size, max) fonts
+  // font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+
+  // using rem function from util
+  font-size: clamp(rem(26), rem(16) + 2vw, rem(40));
+}
+
+h2 {
+  font-size: clamp(rem(22), rem(14) + 1.5vw, rem(36));
+}
+
 p {
-  margin-top: 0px;
+  margin-top: 0;
+  // this rem() will throw an error, defined in the function
+  // font-size: rem(16px);
+  font-size: rem(16);
 }
 
 a,
